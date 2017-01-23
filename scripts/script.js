@@ -33,7 +33,7 @@ function clearGrid() {
 
 // funciton to refresh the grid and ask user how many boxes in the new grid
 function refresh() {
-	var x = prompt("How many squares per side? Default is 50.")
+	var x = prompt("How many squares per side? Default is 50")
 	clearGrid();
 	createGrid(x);
 }
