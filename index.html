@@ -7,18 +7,22 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/script.js"></script>
 
+	<link type="text/css" rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 </head>
 <body>
-	<h1>Etch-a-Sketch</h1>
-	<p>The sketcher is your oyster. Sketch away! Toggle the number of squares by hitting refresh grid.</p>
+	<a href="http://www.theodinproject.com/courses/web-development-101/lessons/javascript-and-jquery?ref=lnav"><h1>The Odin Project</h1></a>
+	<p id="top">The sketchpad is your oyster. Sketch away!</p>
 
-	<div>
-		<button class="refreshGrid">Refresh Grid</button>
-	<!-- 	<button class="gridSize">Grid Size</button> -->
+	<div class="buttons">
+		<button class="resizeGrid">Resize Grid</button>
+		<button class="reset">Clear</button>
+		<button class="toggleOutline">Toggle Outline</button>
 	</div>
 
-	<div id="container">
-	</div>
+	<div id="container"></div>
+
+	<a href="https://github.com/tlapinsk/etch-a-sketch"><p id="bottom">Github</p>
 </body>
 </html>
