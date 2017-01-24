@@ -1,18 +1,28 @@
 // function that creates grid when page loads and allows mouseover function
+// function also clears the grid when user clicks "Clear" button
 $(document).ready(function() {
-    createGrid(50);
+    createGrid(16);
 
     $(".box").mouseover(function() {
         $(this).css("background-color", "black");
         });
 
-    $(".refreshGrid").click(function() {
+    $(".resizeGrid").click(function() {
         refresh();
 
         $(".box").mouseover(function() {
         $(this).css("background-color", "black");
         });
     });
+
+	$(".reset").click(function() {
+		$(".box").css('background-color', 'white');
+	});
+
+	$(".toggleOutline").click(function() {
+		$(".box").toggleClass("outline");
+	})
+
 });
 
 // builds a grid in the "container"
@@ -22,8 +32,8 @@ function createGrid(x) {
             $("#container").append("<div class='box'></div>");
         };
     };
-    $(".box").width(960/x);
-    $(".box").height(960/x);
+    $(".box").width(500/x);
+    $(".box").height(500/x);
 };
 
 // function that clears the grid
@@ -31,9 +41,13 @@ function clearGrid() {
 	$(".box").remove();
 };
 
-// funciton to refresh the grid and ask user how many boxes in the new grid
+// function to refresh the grid and ask user how many boxes in the new grid
 function refresh() {
-	var x = prompt("How many squares per side? Default is 50")
-	clearGrid();
-	createGrid(x);
+	var x = prompt("How many squares per side? Default is 16")
+	if (x == null || x == '') {
+		return;
+	} else {
+		clearGrid();
+		createGrid(x);
+	}
 }
